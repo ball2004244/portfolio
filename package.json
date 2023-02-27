@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "gsap": "^3.11.4",
-    "react-scrollmagic": "^2.3.0"
-  }
-}
