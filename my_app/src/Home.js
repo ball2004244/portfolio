@@ -28,12 +28,12 @@ function Intro() {
         </div>
   
         <div class="button">
-          <a href="/project">
+          <a href="/#/project">
             <button class="rectangle-button">
               <p>Project</p>
             </button>
           </a>
-          <a href="/resume">
+          <a href="/#/resume">
             <button class="rectangle-button">
               <p>Resume</p>
             </button>
