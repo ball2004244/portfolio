@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .App-header {
+    min-height: 100vh;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,7 +21,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +37,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -59,6 +65,13 @@
   cursor: pointer;
 }
 
+.circle-button img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .rectangle-button {
   text-decoration: none;
   background-color: white;
@@ -79,25 +92,26 @@
   margin: 0;
   padding: 5px;
 }
-.circle-button img {
-  width: 50px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50%;
-}
 
 h1 {
   font-size: 3rem;
   font-weight: 1000;
+  text-align: center;
 }
 
 h2 {
   font-size: 1.8rem;
   font-weight: 300;
   font-style: italic;
+  text-align: center;
 }
 
-h1, h2, h3, h4, h5, p{
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   margin: 0;
   color: white;
 }
@@ -115,8 +129,7 @@ h1, h2, h3, h4, h5, p{
 
 .experience-boxes {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
   margin-top: 0;
@@ -131,14 +144,22 @@ h1, h2, h3, h4, h5, p{
   margin: 20px;
   margin-top: 0;
   padding: 10px;
+  width: calc(50% - 40px);
+  max-width: 300px;
 }
+
+@media only screen and (min-width: 768px) {
+  .experience-box {
+    width: calc(35% - 25px);
+  }
+}
+
 
 .experience-box h2 {
   font-size: 1.8rem;
   font-style: normal;
 }
-/* fix the size of front-job-detail and job-detail */
-/* center the content horizontal and vertical */
+
 .front-job-detail, .job-detail {
   width: 300px;
   height: 100px;
@@ -153,15 +174,51 @@ h1, h2, h3, h4, h5, p{
   padding: 10px;
 }
 
-.job-detail {
+/* Hide the job detail when the experience box is not hovered */
+.experience-box .job-detail {
   display: none;
 }
 
 .experience-box:hover .job-detail {
   display: block;
 }
+
 .experience-box:hover .front-job-detail {
   display: none;
+}
+
+/* Center horizontally and vertically within its container */
+.front-job-detail, .job-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .experience-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .front-job-detail, .job-detail {
+    width: 80%;
+    height: auto;
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  .front-job-detail, .job-detail {
+    width: 100%;
+  }
+
+  .experience-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .skill-boxes {
@@ -178,7 +235,6 @@ h1, h2, h3, h4, h5, p{
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
   text-align: left;
 }
 
@@ -196,10 +252,5 @@ h1, h2, h3, h4, h5, p{
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
   text-align: left;
 }
-
-
-
-
