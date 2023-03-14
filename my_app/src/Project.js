@@ -1,6 +1,7 @@
+import "./index.css";
 function Project() {
     return (
-      <div>
+      <div class="Project">
         <h1>Project</h1>
       </div>
     )

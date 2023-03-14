@@ -1,19 +1,22 @@
 import './App.css';
 import React from 'react';
-
-function Footer() {
-  return (
-    <div id="footer">
-      <p>Created by @Tam Nguyen</p>
-    </div>
-  );
-}
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Home from './Home';
+import Project from "./Project";
+import Resume from './Resume';
+import Footer from './config';
 
 function App() {
   return (
-    <div className="App">
-      <Footer />
-    </div>
+    <HashRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/project" element={<Project />} />
+      <Route path="/resume" element={<Resume />} />
+    </Routes>
+    <Footer />
+  </HashRouter>
   );
 }
 

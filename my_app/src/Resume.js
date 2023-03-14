@@ -1,5 +1,6 @@
 import React from 'react';
 import resume from './material/Resume.pdf';
+import "./index.css";
 function Resume() {
   return (
     <div>
