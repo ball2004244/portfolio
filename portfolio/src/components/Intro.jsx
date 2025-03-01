@@ -1,4 +1,5 @@
 import React from "react";
+import avatarImage from "../assets/avatar.jpeg"; // Import the image
 
 const Intro = () => {
     const handleButtonClick = (target) => {
@@ -20,7 +21,7 @@ const Intro = () => {
                         <div className="relative w-full h-full rounded-full border-2 border-cyan-500 overflow-hidden">
                             {/* Add your image here */}
                             <img
-                                src="/src/assets/avatar.jpeg"
+                                src={avatarImage} // Use the imported image
                                 alt="Avatar"
                                 className="w-full h-full object-cover"
                             />
