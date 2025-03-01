@@ -25,7 +25,7 @@ jobs:
 
       - name: Build
         env:
-          REACT_APP_GITHUB_TOKEN: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
+          VITE_GITHUB_TOKEN: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
         run: |
           cd portfolio
           npm run build
