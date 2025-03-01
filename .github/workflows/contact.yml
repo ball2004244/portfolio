@@ -10,7 +10,7 @@ jobs:
       - name: Create Issue
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { name, email, message } = context.payload.client_payload;
             await github.rest.issues.create({
