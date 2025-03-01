@@ -1,99 +1,8 @@
 import React, { useState } from "react";
-
-// Reorganized by time intervals without titles
-const timeIntervals = [
-  {
-    id: "period1",
-    period: "Sep 2024 - Present",
-    experiences: [
-      {
-        id: "exp1",
-        title: "Research Assistant",
-        company: "Professor Yicheng Tu's Advanced Computing Lab",
-        summary:
-          "Work on DeepAligner project, a deep learning-based tool for matching pair of genes. Integrating CAGRA - a GPU vector database - with DeepAligner to achieve higher accuracy with lower latency.",
-        skills: [
-          "PyTorch",
-          "Vector Database",
-          "Benchmarking",
-          "CUDA",
-          "BiLSTM",
-          "K-nearest Neighbors",
-          "Genomics",
-        ],
-        highlight:
-          "Recent results show 99.1% accuracy with ONLY 2s execution time on Ecoli dataset.",
-      },
-    ],
-  },
-  {
-    id: "period2",
-    period: "Jan 2024 - Aug 2024",
-    experiences: [
-      {
-        id: "exp2",
-        title: "Software Engineer Intern",
-        company: "CrossCompute",
-        summary:
-          "Mainly responsible for full-stack development and deployment, with side tasks in UX design and robotics.",
-        skills: ["Jupyter", "Python", "React", "Terraform", "Ansible"],
-        highlight:
-          "First time working in a startup environment, understand 'a man who wears many hats' philosophy.",
-      },
-    ],
-  },
-  {
-    id: "period3",
-    period: "May 2023 - Dec 2023",
-    experiences: [
-      {
-        id: "exp3",
-        title: "Research Assistant",
-        company: "Professor Robert Frisina's Bioinformatics Lab",
-        summary:
-          "Implemented a High-Performance Computing pipeline to detect age-related hearing loss mutations in mtDNA. Applied statistical methods to filter out meaningless mutations.",
-        skills: [
-          "Python",
-          "Docker",
-          "Bash",
-          "Statistics",
-          "Pandas",
-          "Matplotlib",
-        ],
-        highlight:
-          "Presented results at a major conference - ARO MidWinter Meeting 2025.",
-      },
-    ],
-  },
-  {
-    id: "period4",
-    period: "Jan 2023 - Apr 2023",
-    experiences: [
-      {
-        id: "exp4",
-        title: "Research Assistant",
-        company: "Professor Yicheng Tu's Advanced Computing Lab",
-        summary:
-          "Managed data stores and pipelines for various projects. Set up 10Tb GeneBank on Linux machine and applying different methods (multiprocessing, PCA) to prepare training data for DeepAligner model. Besides, I also evaluated multiple database caching algorithms.",
-        skills: [
-          "Python",
-          "Linux",
-          "Docker",
-          "SQL",
-          "Bash",
-          "PCA",
-          "Redis",
-          "Multiprocessing",
-        ],
-        highlight:
-          "Gather 10Tb of data stored distributedly across 115 nodes. Aggregate and host on a single machine.",
-      },
-    ],
-  },
-];
+import { expTimeIntervals } from "../shared/constant";
 
 const Experience = () => {
-  const [activeInterval, setActiveInterval] = useState(timeIntervals[0]);
+  const [activeInterval, setActiveInterval] = useState(expTimeIntervals[0]);
 
   return (
     <section id="experience" className="py-20 bg-gray-900">
@@ -102,7 +11,7 @@ const Experience = () => {
           Experience
         </h2>
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-          My professional journey across research and engineering
+          My professional journey across industry and academia
         </p>
 
         <div className="max-w-5xl mx-auto">
@@ -114,8 +23,8 @@ const Experience = () => {
                 className="h-full bg-gradient-to-r from-cyan-500 to-blue-500"
                 style={{
                   width: `${
-                    (timeIntervals.indexOf(activeInterval) /
-                      (timeIntervals.length - 1)) *
+                    (expTimeIntervals.indexOf(activeInterval) /
+                      (expTimeIntervals.length - 1)) *
                     100
                   }%`,
                   transition: "width 0.5s ease-in-out",
@@ -125,7 +34,7 @@ const Experience = () => {
 
             {/* Timeline Nodes */}
             <div className="relative flex justify-between items-center">
-              {timeIntervals.map((interval, index) => (
+              {expTimeIntervals.map((interval, index) => (
                 <button
                   key={interval.id}
                   onClick={() => setActiveInterval(interval)}
@@ -212,15 +121,15 @@ const Experience = () => {
                       {exp.highlight}
                     </div>
 
-                    {/* Skills */}
+                    {/* Skills with subtle border */}
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill) => (
-                        <div key={skill} className="group relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/50 to-blue-500/50 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity"></div>
-                          <span className="relative block px-3 py-1 text-sm bg-gray-800 text-cyan-400 rounded-full border border-cyan-500/20 group-hover:translate-y-[-2px] transition-transform">
-                            {skill}
-                          </span>
-                        </div>
+                        <span 
+                          key={skill} 
+                          className="px-3 py-1 text-sm bg-gray-800 text-cyan-400 rounded-full border border-cyan-500/30"
+                        >
+                          {skill}
+                        </span>
                       ))}
                     </div>
                   </div>
