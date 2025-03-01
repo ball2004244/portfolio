@@ -29,9 +29,10 @@ const AboutMe = () => {
           About Me
         </h2>
         <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
-          Academic journey in technology and research
+          A man with multiple passions. Curious about everything, I build to
+          learn and learn to build.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <AboutCard
             icon={
               <svg
@@ -44,15 +45,15 @@ const AboutMe = () => {
                 <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
               </svg>
             }
-            title="Bachelor's in Computer Science"
-            subtitle="University of South Florida - 05/2026"
+            title="Bachelor in Computer Science"
+            subtitle="University of South Florida"
             details={[
-              "Coursework: Data Structure & Algorithm, Database Design, Distributed Systems, Parallel Computing, Linear Algebra, Probability & Statistics",
+              "Specialties: Infrastructure & Data Science",
               "Minors: Physics, Astronomy",
+              "Expected: May 2026",
               "GPA: 3.87/4.0",
             ]}
           />
-          {/* AboutCard for Skillsets */}
           <AboutCard
             icon={
               <svg
@@ -78,6 +79,27 @@ const AboutMe = () => {
               "Cloud & Distributed Computing",
               "Data Science",
             ]}
+          />
+          <AboutCard
+            icon={
+              <svg
+                className="w-6 h-6 text-cyan-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            }
+            title="Other Interests"
+            subtitle="Beyond Coding"
+            details={["Writing", "Open Science", "Accessible Education"]}
           />
         </div>
       </div>
