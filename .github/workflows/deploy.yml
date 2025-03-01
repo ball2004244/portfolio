@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -32,4 +34,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: portfolio/dist # Vite builds to 'dist' folder, not 'build'
+          folder: portfolio/dist
+          token: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
