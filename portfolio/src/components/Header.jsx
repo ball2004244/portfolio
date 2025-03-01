@@ -9,7 +9,7 @@ const Header = () => {
         </h1>
         <nav>
           <ul className="flex space-x-6">
-            {["Home", "About Me", "Experience", "Projects", "Contact"].map((item) => (
+            {["Home", "Projects", "Blogs"].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
