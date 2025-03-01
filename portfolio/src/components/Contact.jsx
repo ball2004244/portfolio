@@ -19,44 +19,44 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-    setSuccess(false);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setError(null);
+  //   setSuccess(false);
 
-    try {
-      const response = await fetch(
-        `https://api.github.com/repos/ball2004244/portfolio/dispatches`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-          body: JSON.stringify({
-            event_type: "contact-form-submission",
-            client_payload: formData,
-          }),
-        }
-      );
+  //   try {
+  //     const response = await fetch(
+  //       `https://api.github.com/repos/ball2004244/portfolio/dispatches`,
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
+  //           Accept: "application/vnd.github.v3+json",
+  //         },
+  //         body: JSON.stringify({
+  //           event_type: "contact-form-submission",
+  //           client_payload: formData,
+  //         }),
+  //       }
+  //     );
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("Failed to send message");
+  //     }
 
-      setSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
-      setError("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //     setSuccess(true);
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       message: "",
+  //     });
+  //   } catch (error) {
+  //     setError("Failed to send message. Please try again.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <section id="contact" className="py-20 bg-gray-900">
@@ -69,7 +69,7 @@ const Contact = () => {
         </p>
         <form
           className="max-w-lg mx-auto bg-gray-800/50 p-8 rounded-lg border border-gray-700"
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           <div className="mb-6">
             <label htmlFor="name" className="block text-cyan-400 mb-2 text-sm">
