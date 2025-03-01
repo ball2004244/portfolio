@@ -31,7 +31,7 @@ const Contact = () => {
         {
           method: "POST",
           headers: {
-            Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+            Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
             Accept: "application/vnd.github.v3+json",
           },
           body: JSON.stringify({
