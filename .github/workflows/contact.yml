@@ -12,15 +12,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { name, email, message } = context.payload.client_payload;
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `Contact Form: ${name}`,
-              body: `From: ${name}
-Email: ${email}
-
-Message:
-${message}`,
-              labels: ['contact-form']
-            });
+const { name, email, message } = context.payload.client_payload;
+await github.rest.issues.create({
+  owner: context.repo.owner,
+  repo: context.repo.repo,
+  title: `Contact Form: ${name}`,
+  body: `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+  labels: ['contact-form']
+});
