@@ -33,4 +33,4 @@ jobs:
         with:
           branch: gh-pages
           folder: portfolio/dist
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
